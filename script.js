@@ -1,3 +1,4 @@
+
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement
@@ -6,13 +7,14 @@ class Calculator {
         this.readyToReset = false
         //reason why we call this is so it clears everything when making a new calculation 
     }
+    
 
     clear() {
         this.currentOperand = ''
         this.previousOperand = ''
         this.operation = undefined
         //clear everything
-    }
+    }              
 
     delete() {
         this.currentOperand = this.currentOperand.toString().slice(0,-1)
@@ -25,7 +27,7 @@ class Calculator {
         
         this.currentOperand = this.currentOperand.toString() + number.toString()
         //changes to string cause if you do not it will do math, it appends the number to current operand 
-    }
+    }   
 
     chooseOperation(operation) {
         if(this.currentOperand === '') return
@@ -162,3 +164,34 @@ deleteButton.addEventListener('click', button => {
     calculator.updateDisplay()
     //when equals button is clicked, compute and update display 
 })
+
+//document.getElementById(".titlecalc").style.fontFamily = "Zilla Slab";
+const text = document.querySelector(".titlecalc");
+const strText = text.textContent;
+const splitText = strText.split("");
+
+
+text.textContent = "";
+for(let i = 0; i < splitText.length; i++) {
+    let char = (splitText[i] === " ") ? "&nbsp;" : splitText[i];
+    text.innerHTML += "<span>" + char + "</span>";
+}
+
+let char = 0;
+let timer = setInterval(onTick, 50);
+
+function onTick() {
+    const span = text.querySelectorAll('span')[char];
+    span.classList.add('fade');
+    char++
+    if(char === splitText.length) {
+        complete();
+        return;
+    }
+}
+
+function complete() {
+    clearInterval(timer);
+    timer = null;
+}
+

@@ -1,3 +1,15 @@
+p {
+    font-family: 'Zilla Slab', serif;
+}
+h1{
+    color:purple;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: top;
+    margin-top:0;
+    padding: 20px;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: Impact, sans-serif;
@@ -14,7 +26,7 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
+    min-height: 80vh;
     grid-template-columns: repeat(4,100px);
     grid-template-rows: minmax(120px, auto) repeat(5,100px);
     
@@ -57,4 +69,20 @@ body {
 .output .current-operand {
     color:rgba(255, 255, 255);
     font-size: 2.5rem;
-}     
+} 
+
+body {
+    overflow: hidden;
+  }
+
+span {
+    opacity: 0;
+    transition: all 1s ease;
+    transform: translateY(50px);
+    display: inline-block;
+}
+
+span.fade {
+    opacity: 1;
+    transform: translateY(0px); 
+}

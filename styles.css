@@ -19,7 +19,7 @@ h1{
 body {
     padding: 0;
     margin: 0;
-    background: linear-gradient(to right, #1ABC9C, #A569BD)
+    background: linear-gradient(to right, #1ABC9C, #A569BD);
 }
 
 .calculator-grid {
@@ -71,9 +71,9 @@ body {
     font-size: 2.5rem;
 } 
 
-body {
+/*body {
     overflow: hidden;
-  }
+  }*/
 
 span {
     opacity: 0;
@@ -86,3 +86,4 @@ span.fade {
     opacity: 1;
     transform: translateY(0px); 
 }
+
